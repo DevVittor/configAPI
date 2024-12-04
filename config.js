@@ -1,7 +1,19 @@
 const { exec } = require("child_process");
 const fs = require("node:fs");
-
-exec("yarn init -yp");
+const contentPackage = `{
+  "name": "node",
+  "description": "APIRestFul",
+  "version": "1.0.0",
+  "main": "./src/http/server.js",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch ./",
+    "start": "node --watch ./"
+  }
+}`;
+fs.writeFileSync("package.json", contentPackage);
 exec(
   "yarn add express jsonwebtoken dotenv compression mongoose bcryptjs cors express-validator"
 );
