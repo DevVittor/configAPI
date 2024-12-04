@@ -141,4 +141,5 @@ const contentGitIgnore = "node_modules/\n.env\nrest/";
 fs.writeFileSync(".gitignore", contentGitIgnore);
 fs.createWriteStream(".README.MD");
 fs.createWriteStream("LICENSE");
+exec("yarn dev");
 fs.unlinkSync("config.js");
