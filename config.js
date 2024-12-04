@@ -13,11 +13,13 @@ const contentPackage = `{
     "start": "node --watch ./"
   }
 }`;
+
+exec("yarn init -yp");
+fs.writeFileSync("package.json", "");
 fs.writeFileSync("package.json", contentPackage);
 exec(
   "yarn add express jsonwebtoken dotenv compression mongoose bcryptjs cors express-validator"
 );
-
 const contentEnv =
   "PORT=3000\nJWT_SECRET=Vitovo\nEMAIL_ADMIN=vittorserradev@gmail.com\nPASSWORD_ADMIN=Vitovo100%\nMONGO_URL=mongodb://127.0.0.1:27017/\nMONGO_NAME=Curso";
 const contentEnvExample =
@@ -141,5 +143,4 @@ const contentGitIgnore = "node_modules/\n.env\nrest/";
 fs.writeFileSync(".gitignore", contentGitIgnore);
 fs.createWriteStream(".README.MD");
 fs.createWriteStream("LICENSE");
-exec("yarn dev");
 fs.unlinkSync("config.js");
