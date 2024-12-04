@@ -1,9 +1,10 @@
-import { exec } from 'child_process';
+const { exec } = require("child_process");
+const fs = require("node:fs");
 
 exec("yarn init -yp");
-exec("yarn add express jsonwebtoken dotenv compression mongoose bcryptjs cors express-validator");
-
-import fs from "node:fs";
+exec(
+  "yarn add express jsonwebtoken dotenv compression mongoose bcryptjs cors express-validator"
+);
 
 const contentEnv =
   "PORT=3000\nJWT_SECRET=Vitovo\nEMAIL_ADMIN=vittorserradev@gmail.com\nPASSWORD_ADMIN=Vitovo100%\nMONGO_URL=mongodb://127.0.0.1:27017/\nMONGO_NAME=Curso";
